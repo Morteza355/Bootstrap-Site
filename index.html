@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css"
+    integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <title>Articles Blog</title>
+</head>
+
+<body data-aos="fade-in">
+  <!-- Start Back To Top Button -->
+  <section id="backToTop" class="position-fixed bg-warning opacity-75 rounded-circle p-2">
+    <a href="#" class="text-dark">
+      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-up"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z" />
+      </svg>
+    </a>
+  </section>
+  <!-- End Back To Top Button -->
+  <!-- Nav Bar Start -->
+  <section class="shadow p-1 mb-2 bg-body rounded sticky-top navbar" data-aos="fade-left">
+    <nav class="navbar navbar-expand-lg navbar-light container">
+      <div class="container-fluid d-flex justify-content-between">
+        <button type="button" class="getstrbtn" data-bs-toggle="modal" data-bs-target="#formModal">
+          افزودن مقاله جدید به سایت
+        </button>
+        <a class="navbar-brand fs-4" href="#">وبلاگ</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+          aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarColor03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-auto">
+            <li class="nav-item me-3">
+              <a class="nav-link active" aria-current="page" href="#">خانه</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link" href="#articles">آخرین مقالات</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link" href="#contact">تماس با ما</a>
+            </li>
+            <li class="nav-item navbar-item me-3">
+              <a class="nav-link" href="#our-group">گروه ما</a>
+            </li>
+          </ul>
+          <form class="d-flex justify-content-lg-end">
+            <button type="button" class="getstrbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              اطلاع از بارگذاری آخرین مقالات
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <!-- Start Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">اطلاع از آخرین اخبار</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="email" class="form-label">ایمیل خود را برای دریافت خبر ها وارد کنید.</label>
+              <input type="email" class="form-control mt-2" id="email" placeholder="name@example.com">
+            </div>
+            <button type="submit" class="getstrbtn">ثبت</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Nav Bar End -->
+  <section id="app">
+    <!-- START Header -->
+    <section class="py-5">
+      <section class="container">
+        <section class="row align-items-center">
+          <section class="col-md-6" data-aos="fade-left">
+            <h2 class="display-5 mb-4">دبیرستان <span class="text-warning">نمونه</span> طالقانی</h2>
+            <p class="lead text-muted mb-5 mt-5 fs-6 me-3">
+              دبیرستان طالقانی یا منصور سابق، از جمله ۲۰۰ دبیرستان شهر تبریز به‌شمار می‌رود که در سال ۱۳۲۵ و از محل ۵
+              درصد درآمد شهرداری توسط اداره فرهنگ، شهرداری و اوقاف در محل گورستان‌های متروکه تبریز احداث شد. ساخت این
+              تعداد مدرسه در آن زمان بی‌نظیر بود؛ از این رو، آن دوران را می‌توان نقطه عطف آموزش نوین در ایران نام نهاد.
+              به همین دلیل، از این مدرسه، به عنوان «نماد آموزش نوین آذربایجان» و «دارالفنون تبریز» یاد می‌شود.
+            </p>
+            <section class="text-center text-md-start">
+              <button type="button" class="getstrbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                اطلاع از بارگذاری آخرین مقالات
+              </button>
+            </section>
+          </section>
+          <section class="col-md-6 p-0 school-container rounded" data-aos="fade-right">
+            <img src="assets/images/156848995.jpg" alt="school" class="img-fluid rounded school-img">
+          </section>
+        </section>
+      </section>
+    </section>
+    <!-- End Header -->
+    <!-- Start Posts -->
+    <section class="py-4" id="articles">
+      <section class="container-fluid px-5 py-4">
+        <h2 class="display-5 text-center mt-3 mb-3">آخرین مقالات</h2>
+        <p class="text-center lead text-muted mt-3 mb-5">در این بخش آخرین مقالات نوشته شده قرار می گیرد!</p>
+        <section class="row" id="posts">
+        </section>
+      </section>
+    </section>
+    <!-- End Posts -->
+    <!-- Start Team -->
+    <section class="py-4" id="our-group">
+      <section class="container">
+        <h2 class="display-5 text-center mt-3 mb-5">اعضای گروه وبلاگ نویسی</h2>
+        <section>
+          <section class="row">
+            <section class="col-lg-3">
+              <section class="team text-center">
+                <img src="assets/images/avatar.png" class="img-fluid rounded-circle p-1 border w-75 mb-3">
+                <h2>امیر عباسی</h2>
+                <p class="text-muted">مدیر گروه</p>
+                <ul class="d-flex justify-content-center me-4">
+                  <li class="list-group-item border-0">
+                    <a href="#" class="text-muted instagram">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <a href="#" class="text-muted telegram">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-telegram" viewBox="0 0 16 16">
+                        <path
+                          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </section>
+            <section class="col-lg-3">
+              <section class="team text-center">
+                <img src="assets/images/avatar.png" class="img-fluid rounded-circle p-1 border w-75 mb-3">
+                <h2>مرتضی پورعبدالهی</h2>
+                <p class="text-muted">طراح سایت</p>
+                <ul class="d-flex justify-content-center  me-4">
+                  <li class="list-group-item border-0">
+                    <a href="#" class="text-muted instagram">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <a href="#" class="text-muted telegram">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-telegram" viewBox="0 0 16 16">
+                        <path
+                          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </section>
+            <section class="col-lg-3">
+              <section class="team text-center">
+                <img src="assets/images/avatar.png" class="img-fluid rounded-circle p-1 border w-75 mb-3">
+                <h2>امیر امیرنیا</h2>
+                <p class="text-muted">نویسنده</p>
+                <ul class="d-flex justify-content-center me-4">
+                  <li class="list-group-item border-0">
+                    <a href="#" class="text-muted instagram">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <a href="#" class="text-muted telegram">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-telegram" viewBox="0 0 16 16">
+                        <path
+                          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </section>
+            <section class="col-lg-3">
+              <section class="team text-center">
+                <img src="assets/images/avatar.png" class="img-fluid rounded-circle p-1 border w-75 mb-3">
+                <h2>علی علیلو</h2>
+                <p class="text-muted">نویسنده</p>
+                <ul class="d-flex justify-content-center me-4">
+                  <li class="list-group-item border-0">
+                    <a href="#" class="text-muted instagram">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path
+                          d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="list-group-item border-0">
+                    <a href="#" class="text-muted telegram">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-telegram" viewBox="0 0 16 16">
+                        <path
+                          d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+    <!-- End Team -->
+    <!-- Start  Contact -->
+    <section class="py-4" id="contact">
+      <section class="container">
+        <h2 class="display-5 text-center mt-3 mb-4">تماس با ما</h2>
+        <p class="text-center lead text-muted mt-3 mb-5">از فرم زیر برای برقراری ارتباط با ما استفاده کنید</p>
+        <section class="row g-4">
+          <section class="col-md-12">
+            <form class="p-4 contact-form">
+              <div class="mb-3">
+                <label for="fullnameinput" class="form-label">نام و نام خانوادگی</label>
+                <input type="text" class="form-control" id="fullnameinput" placeholder="Ex : Morteza Porabdolahi">
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">آدرس ایمیل</label>
+                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+              </div>
+              <div class="mb-3">
+                <label for="textArea" class="form-label">متن</label>
+                <textarea class="form-control" id="textArea" rows="7"></textarea>
+              </div>
+              <button type="submit" class="getstrbtn">ارسال</button>
+            </form>
+          </section>
+        </section>
+      </section>
+    </section>
+    <!-- End  Contact -->
+    <!-- Start  Footer -->
+    <footer id="footer">
+      <section class="py-5 text-white">
+        <section class="container">
+          <section class="text-center mt-4">
+            <p class="footer-text">Designed And Developed By <a target="_blank" href="https://github.com/Morteza355"
+                class="text-muted footer-text-user">Morteza</a></p>
+            <p class="text-muted mt-5">Enjoy, All Rights Reserved&copy;</p>
+          </section>
+        </section>
+      </section>
+    </footer>
+    <!-- End  Footer -->
+  </section>
+
+  <!-- Start Post Modal -->
+  <div class="modal fade" id="Post-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" id="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">مقاله</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="modal-body">
+          <section id="article" class="d-flex justify-content-center"></section>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END Post Modal -->
+
+  <!--Start Article Modal -->
+    <div class="modal fade" id="formModal" tabindex="-1" role="dialog" aria-labelledby="formModal"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="FormModalLabel">افزودن مقاله</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/" method="post" enctype="multipart/form-data">
+            <!-- <input type="text" id="article-name" class="form-control mb-3" placeholder="عنوان مقاله...">
+            <textarea rows="10" class="form-control" placeholder="متن اصلی مقاله..." id="article-body"></textarea> -->
+            <form action="/stats" enctype="multipart/form-data" method="post">
+              <div class="form-group">
+                <input type="file" class="form-control-file" name="uploaded_file">
+                <input type="text" class="form-control" placeholder="Number of speakers" name="nspeakers">
+                <input type="submit" value="Get me the stats!" class="btn btn-default">            
+              </div>
+            </form>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End Article Modal -->
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>
