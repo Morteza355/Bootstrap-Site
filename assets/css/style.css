@@ -102,17 +102,6 @@ a {
 #contact {
 	background-color: #f3f3f3;
 }
-body{
-	animation: opacity 1s cubic-bezier(.3, .5 , .8 , 1);
-}
-@keyframes opacity {
-	0%{
-		opacity: 0;
-	}
-	100%{
-		opacity: 1;
-	}
-}
 .card-img-top {
 	height: 250px;
 }

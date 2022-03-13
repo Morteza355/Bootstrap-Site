@@ -47,3 +47,7 @@ $('#Post-modal').on('show.bs.modal', function (event) {
         }
     });
 });
+$('.nav-link').click(function (e) { 
+    $('.nav-link').removeClass('active');
+    $(this).addClass('active');
+});
