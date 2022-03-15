@@ -1,19 +1,17 @@
-window.onload = function () {
-    AOS.init();
-    checkCookieExists();
-    let arr = [];
-    for (let i = 1; i < 3; i++) {
-        $.ajax({
-            type: "GET",
-            url: `assets/articles/article-${i}.html`,
-            dataType: "html",
-            success: function (response) {
-                arr.push(response);
-                const img = response.replace('..','assets');
-                const assets = img.indexOf('assets');
-                const sub = img.substring(assets , assets + 26)
-                setTimeout(() => {
-                    const string = `<section class="col-lg-3" data-aos="flip-left">
+AOS.init();
+let arr = [];
+for (let i = 1; i < 3; i++) {
+    $.ajax({
+        type: "GET",
+        url: `assets/articles/article-${i}.html`,
+        dataType: "html",
+        success: function (response) {
+            arr.push(response);
+            const img = response.replace('..', 'assets');
+            const assets = img.indexOf('assets');
+            const sub = img.substring(assets, assets + 26)
+            setTimeout(() => {
+                const string = `<section class="col-lg-3" data-aos="flip-left">
                     <div class="card mb-3 shadow post-card">
                     <img src="${sub}" class="card-img-top">
                     <div class="card-body">
@@ -24,16 +22,14 @@ window.onload = function () {
                     d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
                 </svg>
                 بیشتر...</button></div></div></section>`
-                    document.getElementById('posts').innerHTML += string;
-                }, 1000);
-                setTimeout(() => {
-                    document.getElementsByClassName('card-title')[i - 1].innerHTML += arr[i - 1];
-                }, 1500);
-            }
-        });
-    }
+                document.getElementById('posts').innerHTML += string;
+            }, 1000);
+            setTimeout(() => {
+                document.getElementsByClassName('card-title')[i - 1].innerHTML += arr[i - 1];
+            }, 1500);
+        }
+    });
 }
-
 $('#Post-modal').on('show.bs.modal', function (event) {
     let button = $(event.relatedTarget);
     let recipient = button.data('article');
@@ -48,16 +44,29 @@ $('#Post-modal').on('show.bs.modal', function (event) {
         }
     });
 });
-$('.nav-link').click(function (e) { 
+$('.nav-link').click(function (e) {
     $('.nav-link').removeClass('active');
     $(this).addClass('active');
 });
+
+//-----------------------------------------// 
+const form = document.getElementById('register-form');
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    const userName = e.srcElement[0].value;
+    const userEmail = e.srcElement[1].value;
+    const userPassword = e.srcElement[2].value;
+    checkCookieExists(userName, userEmail, userPassword);
+    idGenerate();
+});
+
 function setCoockie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
     let expires = d.toUTCString();
-    document.cookie = `${cname}=${cvalue};expires=${expires};path=/`;
+    document.cookie = `${cname}=${JSON.stringify(cvalue)};expires=${expires};path=/`;
 }
+
 function getCookie(cname) {
     let name = `${cname}=`;
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -68,20 +77,112 @@ function getCookie(cname) {
             cookie = cookie.substring(1);
         }
         if (cookie.indexOf(name) == 0) {
-            return cookie.substring(name.length, cookie.length).replace(/\s/g,'');
+            return cookie.substring(name.length, cookie.length).replace(/\s/g, '');
         }
     }
     return "";
 }
-function checkCookieExists() {
-    let username = getCookie('username');
-    if (username != '') {
-        alert(`Welcome again ${username}`);
+
+function RegisterAlert(className, content) {
+    let alertBox = document.getElementById('register-alert-box');
+    alertBox.style.display = 'block';
+    alertBox.innerHTML = content;
+    alertBox.className = className;
+}
+
+function checkCookieExists(username, email, password) {
+    let userObj = getCookie('user');
+    if (userObj != '') {
+        RegisterAlert('alert alert-danger alert-box-register', 'شما قبلا ثبت نام کرده اید!');
+        return;
     } else {
-        username = prompt('Enter Your UserName!');
-        if (username != null || username != '') {
-            setCoockie('username', username, 365);
-            setCoockie('Premissions', true, 365);
+        if (username.length == 0) {
+            RegisterAlert('alert alert-danger alert-box-register', 'نام کاربری خود را به درستی وارد کنید!');
+        } else if (password.length == 0) {
+            RegisterAlert('alert alert-danger alert-box-register', 'رمز عبور خود را به درستی وارد کنید!');
+        } else if (email.length == 0) {
+            RegisterAlert('alert alert-danger alert-box-register', 'ایمیل خود را به درستی وارد کنید!');
+        } else {
+            userObj = {
+                'username': username,
+                'password': password,
+                'email': email
+            }
+            setCoockie('user', userObj, 365);
+            RegisterAlert('alert alert-success alert-box-register', 'شما با موفقیت ثبت نام کردید (لطفا وارد حساب خود شوید ! )');
         }
     }
 }
+
+function loginAlert(className, content) {
+    let loginAlert = document.getElementById('login-alert-box');
+    loginAlert.style.display = 'block';
+    loginAlert.innerHTML = content;
+    loginAlert.className = className;
+}
+
+function loginUser() {
+    const objString = getCookie('user');
+    const realObj = JSON.parse(objString);
+    let loginPassInput = document.getElementById('login-password-input').value;
+    let loginUserInput = document.getElementById('login-username-input').value;
+    if (realObj.username !== loginUserInput) {
+        loginAlert('alert alert-danger alert-box-register', 'نام کاربری وارد شده اشتباه است !');
+    } else if (realObj.password !== loginPassInput) {
+        loginAlert('alert alert-danger alert-box-register', 'رمز عبور وارد شده اشتباه است !');
+    } else {
+        localStorage.setItem('yourName', realObj.username);
+        loginAlert('alert alert-success alert-box-register', 'شما با موفقیت وارد شدید (لطفا چند لحظه صبر کنید)');
+        setTimeout(() => {
+            location.reload();
+            let userProfile = document.getElementById('user-profile');
+            if (realObj.username != null) {
+                const string = `<section class="user-profile">
+                <span id="user-name" class="fs-5">
+                  <span><i class="bi bi-chevron-down"></i></span>
+                  ${realObj.username}
+                </span>
+                <section class="dropdown" id="dropdown">
+                  <span>اطلاعات حساب کاربری</span>
+                  <span>قفل صفحه</span>
+                  <span id="logout">خروج</span>
+                </section>
+              </section>`
+                userProfile.innerHTML = string;
+            }
+        }, 3000);
+    }
+}
+let loginForm = document.getElementById('login-form');
+loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    loginUser();
+});
+window.addEventListener('load', e => {
+    const Name = localStorage.getItem('yourName');
+    let userProfile = document.getElementById('user-profile');
+    if (Name != null) {
+        const string = `<section class="user-profile">
+        <span id="user-name" class="fs-5">
+          <span><i class="bi bi-chevron-down"></i></span>
+          ${Name}
+        </span>
+        <section class="dropdown" id="dropdown">
+          <span>اطلاعات حساب کاربری</span>
+          <span>قفل صفحه</span>
+          <span id="logout">خروج</span>
+        </section>
+      </section>`
+        userProfile.innerHTML = string;
+    }
+    let logoutBtn = document.getElementById('logout');
+    logoutBtn.addEventListener('click',e => {
+        localStorage.removeItem('yourName');
+        location.reload();
+    });
+});
+// ------------------------- // 
+let dropdownActive = document.getElementById('user-profile');
+dropdownActive.addEventListener('click', e => {
+    $('#dropdown').toggle();
+});
