@@ -1,5 +1,6 @@
 window.onload = function () {
     AOS.init();
+    checkCookieExists();
     let arr = [];
     for (let i = 1; i < 3; i++) {
         $.ajax({
@@ -83,7 +84,4 @@ function checkCookieExists() {
             setCoockie('Premissions', true, 365);
         }
     }
-}
-window.onload = () => {
-    checkCookieExists();
 }
