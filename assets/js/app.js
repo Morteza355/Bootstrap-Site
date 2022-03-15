@@ -51,3 +51,39 @@ $('.nav-link').click(function (e) {
     $('.nav-link').removeClass('active');
     $(this).addClass('active');
 });
+function setCoockie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    let expires = d.toUTCString();
+    document.cookie = `${cname}=${cvalue};expires=${expires};path=/`;
+}
+function getCookie(cname) {
+    let name = `${cname}=`;
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cookies = decodedCookie.split(';');
+    for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i];
+        while (cookie.charAt(0) == ' ') {
+            cookie = cookie.substring(1);
+        }
+        if (cookie.indexOf(name) == 0) {
+            return cookie.substring(name.length, cookie.length).replace(/\s/g,'');
+        }
+    }
+    return "";
+}
+function checkCookieExists() {
+    let username = getCookie('username');
+    if (username != '') {
+        alert(`Welcome again ${username}`);
+    } else {
+        username = prompt('Enter Your UserName!');
+        if (username != null || username != '') {
+            setCoockie('username', username, 365);
+            setCoockie('Premissions', true, 365);
+        }
+    }
+}
+window.onload = () => {
+    checkCookieExists();
+}
