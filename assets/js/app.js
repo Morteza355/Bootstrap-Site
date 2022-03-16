@@ -102,9 +102,11 @@ function checkCookieExists(username, email, password) {
         RegisterAlert('alert alert-danger alert-box-register', 'شما قبلا ثبت نام کرده اید!');
         return;
     } else {
-        if (UsersStringArr.includes(username)) {
-            RegisterAlert('alert alert-danger alert-box-register', 'این نام کاربری قبلا ثبت شده است !');
-            return;
+        if (UsersStringArr) {
+            if(UsersStringArr.includes(username)){
+                RegisterAlert('alert alert-danger alert-box-register', 'این نام کاربری قبلا ثبت شده است !');
+                return;
+            }
         }
         let usernamePattern = /^[a-zA-Z]{5,10}$/;
         let emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
