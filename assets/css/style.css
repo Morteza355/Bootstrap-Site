@@ -184,25 +184,3 @@ a {
 	cursor: pointer;
 	position: relative;
 }
-.dropdown{
-	position: absolute;
-	right: 0;
-	top: 3.1rem;
-	background-color: rgba(255, 255, 255,1);
-	width: 200px;
-	display: none;
-	animation: opacity .5s;
-}
-@keyframes opacity {
-	0%{
-		opacity: 0;
-	}
-	100%{
-		opacity: 1;
-	}
-}
-.dropdown > span {
-	display: block;
-	border-top: 1px solid rgb(151, 151, 151);
-	padding: 1rem .5rem;
-}
