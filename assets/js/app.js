@@ -93,9 +93,10 @@ function getCookie(cname) {
     }
     return null;
 }
-
+let userArrays = [];
 function checkCookieExists(username, email, password) {
     let userObj = getCookie('user');
+    let UsersStringArr = localStorage.getItem('UserArrays');
     if (userObj != null) {
         RegisterAlert('alert alert-danger alert-box-register', 'شما قبلا ثبت نام کرده اید!');
         return;
@@ -108,7 +109,7 @@ function checkCookieExists(username, email, password) {
             RegisterAlert('alert alert-danger alert-box-register', 'رمز عبور خود را به درستی وارد کنید!');
         } else if (!(emailPattern.test(email))) {
             RegisterAlert('alert alert-danger alert-box-register', 'ایمیل خود را به درستی وارد کنید!');
-        }else if(document.cookie.includes(username)){
+        }else if(UsersStringArr.includes(username)){
             RegisterAlert('alert alert-danger alert-box-register', 'این نام کاربری قبلا ثبت شده است !');
         } else {
             userObj = {
@@ -118,6 +119,11 @@ function checkCookieExists(username, email, password) {
             }
             setCoockie('user', userObj, 365);
             RegisterAlert('alert alert-success alert-box-register', 'شما با موفقیت ثبت نام کردید (لطفا وارد حساب خود شوید ! )');
+            let realObj = JSON.parse(userObj);
+            userArrays.push(realObj.username);
+            setTimeout(() => {
+                localStorage.setItem('UserArrays',JSON.stringify(userArrays));
+            }, 2000);
         }
     }
 }
