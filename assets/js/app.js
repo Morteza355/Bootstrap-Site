@@ -8,13 +8,13 @@ for (let i = 1; i < 4; i++) { // you should increase the condition number after 
         success: function (response) {
             const imgIndex = response.indexOf('img');
             const jpgIndex = response.indexOf('jpg');
-            const subString = response.substring(imgIndex - 1, jpgIndex+5);
-            let newResponse = response.replace(subString,'');
+            const subString = response.substring(imgIndex - 1, jpgIndex + 5);
+            let newResponse = response.replace(subString, '');
             arr.push(newResponse);
             const img = response.replace('..', 'assets');
             const assets = img.indexOf('assets');
             const jpg = img.indexOf('jpg');
-            const sub = img.substring(assets, jpg+3);
+            const sub = img.substring(assets, jpg + 3);
             setTimeout(() => {
                 const string = `<section class="col-lg-3" data-aos="flip-left">
                     <div class="card mb-3 shadow post-card">
@@ -47,8 +47,8 @@ $('#Post-modal').on('show.bs.modal', function (event) {
         success: function (response) {
             const assets = response.indexOf('img');
             const jpg = response.indexOf('jpg');
-            const sub = response.substring(assets - 1, jpg+5);
-            let newResponse = response.replace(sub,'');
+            const sub = response.substring(assets - 1, jpg + 5);
+            let newResponse = response.replace(sub, '');
             modal.find('.modal-body #article').html(newResponse);
         }
     });
@@ -94,6 +94,7 @@ function getCookie(cname) {
     return null;
 }
 let userArrays = [];
+
 function checkCookieExists(username, email, password) {
     let userObj = getCookie('user');
     let UsersStringArr = localStorage.getItem('UserArrays');
@@ -101,6 +102,10 @@ function checkCookieExists(username, email, password) {
         RegisterAlert('alert alert-danger alert-box-register', 'شما قبلا ثبت نام کرده اید!');
         return;
     } else {
+        if (UsersStringArr.includes(username)) {
+            RegisterAlert('alert alert-danger alert-box-register', 'این نام کاربری قبلا ثبت شده است !');
+            return;
+        }
         let usernamePattern = /^[a-zA-Z]{5,10}$/;
         let emailPattern = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         if (!(usernamePattern.test(username))) {
@@ -109,8 +114,6 @@ function checkCookieExists(username, email, password) {
             RegisterAlert('alert alert-danger alert-box-register', 'رمز عبور خود را به درستی وارد کنید!');
         } else if (!(emailPattern.test(email))) {
             RegisterAlert('alert alert-danger alert-box-register', 'ایمیل خود را به درستی وارد کنید!');
-        }else if(UsersStringArr.includes(username)){
-            RegisterAlert('alert alert-danger alert-box-register', 'این نام کاربری قبلا ثبت شده است !');
         } else {
             userObj = {
                 'username': username,
@@ -119,10 +122,9 @@ function checkCookieExists(username, email, password) {
             }
             setCoockie('user', userObj, 365);
             RegisterAlert('alert alert-success alert-box-register', 'شما با موفقیت ثبت نام کردید (لطفا وارد حساب خود شوید ! )');
-            let realObj = JSON.parse(userObj);
-            userArrays.push(realObj.username);
+            userArrays.push(userObj.username);
             setTimeout(() => {
-                localStorage.setItem('UserArrays',JSON.stringify(userArrays));
+                localStorage.setItem('UserArrays', JSON.stringify(userArrays));
             }, 2000);
         }
     }
@@ -185,7 +187,7 @@ window.addEventListener('load', e => {
         buttons.style.cssText = 'display:none!important';
         dropDown.style.display = 'block';
         NameLink.innerHTML = Name;
-    }else{
+    } else {
         buttons.style.cssText = 'display:flex!important';
         dropDown.style.display = 'none';
     }
@@ -193,9 +195,9 @@ window.addEventListener('load', e => {
 // ------------------------- // 
 // if logout btn exists just logout the user and remove his name on localStorage
 let logoutBtn = document.getElementById('logout');
-    logoutBtn.addEventListener('click', e => {
-        localStorage.removeItem('yourName');
-        location.reload();
-        dropDown.style.cssText = 'display:none!important';
-    });
+logoutBtn.addEventListener('click', e => {
+    localStorage.removeItem('yourName');
+    location.reload();
+    dropDown.style.cssText = 'display:none!important';
+});
 // ------------------------- // 
